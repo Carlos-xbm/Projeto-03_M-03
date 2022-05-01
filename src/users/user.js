@@ -1,8 +1,9 @@
 const { MongoServerClosedError } = require("mongodb");
 const mongoose = require("mongoose");
-const UserSchema = new mongoose.schema({
+const UserSchema = new mongoose.Schema({
   name: {
     type: String,
+    required: true,
   },
   username: {
     type: String,
@@ -18,7 +19,7 @@ const UserSchema = new mongoose.schema({
   password: {
     type: String,
     required: true,
-    // select: false,
+    select: false,
   },
   avatar: {
     type: String,
@@ -26,6 +27,6 @@ const UserSchema = new mongoose.schema({
   },
 });
 
-const User = mongoose.model("user", UserSchema);
+const User = mongoose.model("User", UserSchema);
 
 module.exports = User;
