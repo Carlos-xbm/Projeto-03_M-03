@@ -1,0 +1,272 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "API projeto-03_m-03",
+    "description": "Api Rick and Morty",
+    "termsOfService": "",
+    "contact": {
+      "email": "carloseduardoedu.carlos@hotmail.com"
+    },
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3001/users",
+      "description": "API de teste"
+    },
+    {
+      "url": "https://projeto-03-m-03-xbm.onrender.com/users",
+      "description": "API de produção"
+    }
+  ],
+  "paths": {
+    "/users/": {
+      "get": {
+        "summary": "Buscar todos os usuário",
+        "description": "Rota responsável por listar todos os usuários",
+        "tags": ["users"],
+        "responses": {
+          "404": {
+            "description": "Not Found"
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/users"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users/create": {
+      "post": {
+        "summary": "Criar um novo usuário",
+        "description": "Rota responsável por Criar um novo usuário",
+        "tags": ["users"],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/users"
+              },
+              "examples": {
+                "users": {
+                  "value": {
+                    "name": "Carlos Eduardo",
+                    "username": "xumbym",
+                    "email": "xumbym.18@gmail.com",
+                    "password": "1234",
+                    "avatar": "dsdsf",
+                    "required": true
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "400": {
+            "description": "Bad Request"
+          },
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/users"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/auth/login": {
+      "post": {
+        "summary": "Entrar na API do Rick and Morty",
+        "description": "Rota responsável por Entrar na API do Rick and Morty",
+        "tags": ["Auth"],
+        "parameters": [
+          {
+            "email": "xumbym.18@gmail.com",
+            "password": "1234",
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/users"
+              },
+              "examples": {
+                "Paletas": {
+                  "value": {
+                    "email": "xumbym.18@gmail.com",
+                    "password": "1234"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "400": {
+            "description": "Bad Request"
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/users"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/delete-paleta/{id}": {
+      "delete": {
+        "summary": "Apagar uma paleta pelo ID",
+        "description": "Rota responsável por apagar uma paleta pelo ID",
+        "tags": ["Paletas"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id da paleta para deleção",
+            "required": true
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Bad Request"
+          },
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/all-carrinho": {
+      "get": {
+        "summary": "Lista de todos os itens do carrinho",
+        "description": "Rota responsável por listar todos os itens do carrinho",
+        "tags": ["Carrinho"],
+        "responses": {
+          "404": {
+            "description": "Not Found"
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Carrinho"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/create-carrinho": {
+      "post": {
+        "summary": "Cadastrar vários itens no carrinho",
+        "description": "Rota responsável por cadastrar vários itens no carrinho",
+        "tags": ["Carrinho"],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Carrinho"
+              },
+              "examples": {
+                "Carrinho": {
+                  "value": [
+                    {
+                      "paletaId": "624230fdcd38269205c82197",
+                      "quantidade": 5
+                    },
+                    {
+                      "paletaId": "62423c1e618f4a4738a5ee75",
+                      "quantidade": 2
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "400": {
+            "description": "Bad Request"
+          },
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Carrinho"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/finish-carrinho": {
+      "delete": {
+        "summary": "Apagar todos os itens do carrinho",
+        "description": "Rota responsável por apagar todos os itens do carrinho",
+        "tags": ["Carrinho"],
+        "responses": {
+          "400": {
+            "description": "Bad Request"
+          },
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Paletas": {
+        "type": "object",
+        "properties": {
+          "sabor": {
+            "type": "string"
+          },
+          "descricao": {
+            "type": "string"
+          },
+          "foto": {
+            "type": "string"
+          },
+          "preco": {
+            "type": "number"
+          }
+        }
+      }
+    }
+  }
+}
