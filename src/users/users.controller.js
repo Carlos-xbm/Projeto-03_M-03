@@ -41,7 +41,7 @@ const createUserController = async (req, res) => {
     token,
   });
 
-  req.send({ token });
+  res.send({ token });
 };
 const findAllUserController = async (req, res) => {
   const users = await userService.findAllUserService();
