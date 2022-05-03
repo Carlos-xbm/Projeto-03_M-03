@@ -32,7 +32,7 @@
                 "$ref": "#/components/schemas/User"
               },
               "examples": {
-                "users": {
+                "user": {
                   "value": {
                     "name": "Cacau Lima",
                     "username": "carlos-xbm",
