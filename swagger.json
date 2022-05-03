@@ -157,7 +157,7 @@
               "application/json": {
                 "schema": {
                   "type": "object",
-                  "$ref": "#/components/schemas/Tweet"
+                  "$ref": "#/components/schemas/character"
                 }
               }
             }
