@@ -16,5 +16,5 @@ app.use("/users", userRoute);
 app.use("/auth", authRoute);
 
 app.listen(port, () => {
-  console.log(`Servidor rodando na porta: ${port}`);
+  console.log(`Servidor rodando na porta http://localhost:${port}`);
 });

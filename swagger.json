@@ -136,8 +136,8 @@
                 "character": {
                   "value": {
                     "user": "",
-                    "characterNome": "Rick",
-                    "urlDaImagem": "http://dsfdsf"
+                    "characterName": "Rick",
+                    "urlDaImag": "http://dsfdsf"
                   }
                 }
               }
@@ -265,8 +265,8 @@
               "examples": {
                 "Paletas": {
                   "value": {
-                    "characterNome": "Limão Editado",
-                    "urlDaImagem": "http://sdsds"
+                    "characterName": "Limão Editado",
+                    "urlDaImag": "http://sdsds"
                   }
                 }
               }
@@ -324,7 +324,7 @@
         "parameters": [
           {
             "in": "query",
-            "name": "characterNome",
+            "name": "characterName",
             "type": "string",
             "required": true
           }
@@ -384,10 +384,10 @@
         "character": {
           "type": "object",
           "properties": {
-            "characterNome": {
+            "characterName": {
               "type": "string"
             },
-            "urlDaImagem": {
+            "urlDaImag": {
               "type": "string"
             }
           }
