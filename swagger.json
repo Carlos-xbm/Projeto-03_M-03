@@ -90,7 +90,7 @@
     },
     "/auth/login": {
       "post": {
-        "summary": "Entrar no Twitter",
+        "summary": "Entrar no sistema",
         "description": "Rota responsável fazer o login de um user cadastrado",
         "tags": ["Auth"],
         "requestBody": {
