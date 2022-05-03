@@ -174,11 +174,6 @@
         "parameters": [
           {
             "in": "query",
-            "characterName": "limit",
-            "type": "string"
-          },
-          {
-            "in": "query",
             "characterName": "offset",
             "type": "string"
           }
