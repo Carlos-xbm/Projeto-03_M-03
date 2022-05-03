@@ -29,10 +29,10 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/user"
               },
               "examples": {
-                "Users": {
+                "users": {
                   "value": {
                     "name": "Cacau Lima",
                     "username": "carlos-xbm",
@@ -55,7 +55,7 @@
               "application/json": {
                 "schema": {
                   "type": "object",
-                  "$ref": "#/components/schemas/User"
+                  "$ref": "#/components/schemas/user"
                 }
               }
             }
@@ -79,7 +79,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/User"
+                    "$ref": "#/components/schemas/user"
                   }
                 }
               }
@@ -97,10 +97,10 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/user"
               },
               "examples": {
-                "User": {
+                "user": {
                   "value": {
                     "email": "clima@gmail.com",
                     "password": "12345"
@@ -361,7 +361,7 @@
         }
       },
       "schemas": {
-        "User": {
+        "user": {
           "type": "object",
           "properties": {
             "name": {
