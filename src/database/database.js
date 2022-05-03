@@ -10,8 +10,7 @@ function connectDatabase() {
   console.log('Conectando com banco de dados ...');
 
   mongoose
-    // .connect(process.env.DATABASE_URL, {
-    .connect('mongodb://localhost:27017/Api-Rick-and-Morty', {
+    .connect(process.env.DATABASE_URL, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     })
