@@ -88,7 +88,7 @@
         }
       }
     },
-    "/auth/login": {
+    "/login": {
       "post": {
         "summary": "Entrar no sistema",
         "description": "Rota responsável fazer o login de um user cadastrado",
